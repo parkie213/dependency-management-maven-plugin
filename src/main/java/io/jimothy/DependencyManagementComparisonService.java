@@ -3,6 +3,7 @@ package io.jimothy;
 import org.apache.maven.model.Dependency;
 import org.apache.maven.plugin.logging.Log;
 
+import javax.inject.Inject;
 import java.util.List;
 
 import static com.google.common.collect.Lists.newArrayList;
@@ -15,10 +16,9 @@ import static io.jimothy.DependencyUtil.DEPENDENCY_COMPARATOR;
  */
 public class DependencyManagementComparisonService {
 
-    private final Log log;
+    @Inject
+    public DependencyManagementComparisonService() {
 
-    public DependencyManagementComparisonService(Log log) {
-        this.log = log;
     }
 
     public List<Dependency> compareDependencyManagement(List<Dependency> dependencyManagement, List<Dependency> dependencies) {

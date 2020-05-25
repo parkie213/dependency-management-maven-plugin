@@ -16,7 +16,7 @@ import static org.hamcrest.Matchers.containsInAnyOrder;
 
 public class DependencyManagementComparisonServiceTest {
 
-    private DependencyManagementComparisonService service = new DependencyManagementComparisonService(new SystemStreamLog());
+    private DependencyManagementComparisonService service = new DependencyManagementComparisonService();
 
     private List<Dependency> dependencyManagement = ImmutableList.of(DEPENDENCY_1, DEPENDENCY_2, DEPENDENCY_3, DEPENDENCY_4);
     private List<Dependency> dependencies = ImmutableList.of(DEPENDENCY_1, DEPENDENCY_2);

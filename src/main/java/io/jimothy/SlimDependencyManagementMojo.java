@@ -9,11 +9,13 @@ import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
 
+import javax.inject.Inject;
 import java.util.List;
 
 @Mojo(name = "slim-dependency-management", defaultPhase = LifecyclePhase.INITIALIZE)
 public class SlimDependencyManagementMojo extends AbstractMojo {
 
+    @Inject
     private DependencyManagementComparisonService service;
 
     @Parameter(property = "project", readonly = true)
@@ -21,7 +23,6 @@ public class SlimDependencyManagementMojo extends AbstractMojo {
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
-        service = new DependencyManagementComparisonService(getLog());
         List<Dependency> extraDependencies = service.compareDependencyManagement(
                 project.getDependencyManagement().getDependencies(), project.getDependencies());
         getLog().info("Extra Dependencies: ");
