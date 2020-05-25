@@ -16,6 +16,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <guava-version>29.0-jre</guava-version>
+        <javax-inject-version>1</javax-inject-version>
         <maven-plugin-version>3.6.0</maven-plugin-version>
         <jool-version>0.9.12</jool-version>
 
@@ -31,8 +32,18 @@
                 <version>${guava-version}</version>
             </dependency>
             <dependency>
+                <groupId>javax.inject</groupId>
+                <artifactId>javax.inject</artifactId>
+                <version>${javax-inject-version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.apache.maven</groupId>
                 <artifactId>maven-core</artifactId>
+                <version>${maven-plugin-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven</groupId>
+                <artifactId>maven-model</artifactId>
                 <version>${maven-plugin-version}</version>
             </dependency>
             <dependency>
@@ -61,6 +72,11 @@
                 <artifactId>junit-jupiter</artifactId>
                 <version>${junit-jupuiter.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${junit-jupuiter.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -70,8 +86,17 @@
             <artifactId>guava</artifactId>
         </dependency>
         <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-model</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.maven</groupId>
@@ -94,6 +119,11 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
