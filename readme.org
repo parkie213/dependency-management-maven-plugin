@@ -1,0 +1,21 @@
+* Dependency Management Maven Plugin
+
+** Install locally
+
+mvn clean install
+
+** Run in any Maven project
+
+*** Print out organised dependency list
+
+mvn io.jimothy:dependency-management-maven-plugin:1.0-SNAPSHOT:organise-dependencies
+
+Will print out the dependencies. Will want some tweaking to use properties and splitting between dependencies and dependency managemebnt.
+
+*** Print out dependencies declared in pom and not used
+
+mvn io.jimothy:dependency-management-maven-plugin:1.0-SNAPSHOT:slim-dependency-management
+
+** Sweet docs
+
+https://maven.apache.org/plugin-developers/index.html
